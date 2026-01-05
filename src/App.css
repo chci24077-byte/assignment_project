@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+
+.app-background {
+  min-height: 100vh;
+  background-image: url("./assets/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+}
+
+button {
+  background-color: #ffb703;
+  color: #333;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 999px; /* 丸い！ */
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px;
+
+  background-color: rgba(255, 255, 255, 0.9);
+
+  /* ここから枠 */
+  border: 2px solid #e9c46a;
+  border-radius: 20px;
+
+  /* ちょい影（高級感） */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
