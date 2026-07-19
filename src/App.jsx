@@ -197,7 +197,7 @@ function App() {
     const meal = filtered[randomIndex];
     setSelectedMeal(meal);
 
-    const newHistory = [meal.name, ...history];
+    const newHistory = [meal.name, ...history].slice(0, 5);
     setHistory(newHistory);
     localStorage.setItem("mealHistory", JSON.stringify(newHistory));
   };
