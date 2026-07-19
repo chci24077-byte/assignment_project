@@ -168,7 +168,10 @@ function App() {
   const [genre, setGenre] = useState("");
   const [time, setTime] = useState("");
   const [selectedMeal, setSelectedMeal] = useState(null);
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState(() => {
+  const savedHistory = localStorage.getItem("mealHistory");
+  return savedHistory ? JSON.parse(savedHistory) : [];
+　});
 
  // 起動時に、保存された履歴を読み込む
   useEffect(() => {
