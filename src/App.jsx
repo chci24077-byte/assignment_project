@@ -169,18 +169,9 @@ function App() {
   const [time, setTime] = useState("");
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [history, setHistory] = useState(() => {
-  const savedHistory = localStorage.getItem("mealHistory");
-  return savedHistory ? JSON.parse(savedHistory) : [];
-　});
-
- // 起動時に、保存された履歴を読み込む
-  useEffect(() => {
-    const saved = localStorage.getItem("mealHistory");
-    if (saved) {
-      setHistory(JSON.parse(saved));
-    }
-  }, []);
-
+    const savedHistory = localStorage.getItem("mealHistory");
+    return savedHistory ? JSON.parse(savedHistory) : [];
+  });
   // 料理決定
   const decideMeal = () => {
     const filtered = meals.filter((meal) => {
