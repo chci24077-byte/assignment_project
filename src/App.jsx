@@ -170,14 +170,13 @@ function App() {
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [history, setHistory] = useState([]);
 
-  // 履歴読み込み
-  const addToHistory = (meal) => {
-    setHistory((prevHistory) => {
-      const newHistory = [meal, ...prevHistory].slice(0, 5);
-      localStorage.setItem("mealHistory", JSON.stringify(newHistory));
-      return newHistory;
-    });
-  };
+ // 起動時に、保存された履歴を読み込む
+  useEffect(() => {
+    const saved = localStorage.getItem("mealHistory");
+    if (saved) {
+      setHistory(JSON.parse(saved));
+    }
+  }, []);
 
   // 料理決定
   const decideMeal = () => {
